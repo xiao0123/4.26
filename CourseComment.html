@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+	<!--http://help.xiaogj.com/w1/helpclass/show-96.html-->
+
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<link rel="stylesheet" href="css/weui.css" />
+		<link rel="stylesheet" href="css/style.css" />
+		<link rel="stylesheet" href="css/iconfont.css" />
+		<style type="text/css">
+			
+			.weui-cell__bd p{
+				color: #888888;
+				font-size: 12px;
+			}
+			.weui-cell__bd p.course-title{
+				color: #333333;
+				font-weight: 900;
+				font-size: 16px;
+			}
+			
+			.coment-star span{
+				font-size: 16px;
+				margin-right: 5px;
+				color: gray;
+			}
+			
+			.coment-star .active{
+				color: orange;
+			}
+			
+		</style>
+	</head>
+
+	<body>
+		<div class="weui-cells weui-cells_form">
+		<div class="weui-cell">
+                <div class="weui-cell__hd"><label class="weui-label">qq</label></div>
+                <div class="weui-cell__bd coment-star">
+                    <span class="iconfont icon-star"></span>
+                    <span class="iconfont icon-star"></span>
+                    <span class="iconfont icon-star"></span>
+                    <span class="iconfont icon-star"></span>
+                    <span class="iconfont icon-star"></span>
+                </div>
+            </div>
+		</div>
+		<script type="text/javascript" src="js/weui.min.js"></script>
+		<script type="text/javascript" src="js/jquery-2.1.0.js" ></script>
+		<script type="text/javascript">
+			
+			$(".coment-star span").hover(function(){
+				
+				var index = $(this).index();
+				
+				$(".coment-star span").removeClass("active");
+				$(".coment-star span:eq("+index+")").addClass("active");
+				$(".coment-star span:lt("+index+")").addClass("active");
+			});
+			
+			$(".coment-star span").click(function(){
+				var index = $(this).index();
+				$(".coment-star span").removeClass("active");
+				$(".coment-star span:eq("+index+")").addClass("active");
+				$(".coment-star span:lt("+index+")").addClass("active");
+			});
+			
+			
+		</script>
+	</body>
+
+</html>
